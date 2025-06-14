@@ -17,6 +17,7 @@ RUN a2enmod rewrite
 
 # Installeer Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 
 
 WORKDIR /var/www/html
