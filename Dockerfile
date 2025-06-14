@@ -37,6 +37,7 @@ RUN chown -R www-data:www-data /var/www/html \
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # Genereer app key
+RUN cp .env.example .env
 RUN php artisan key:generate
 
 # Zorg dat Apache draait op poort 80
